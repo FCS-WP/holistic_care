@@ -1,0 +1,81 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/holistic-hero/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-holistic-hero.az-force-fullwidth {
+  width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+  max-width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+  margin-right: calc(50% - 50vw + var(--az-scrollbar-compensation, 0px) / 2);
+  margin-left: calc(50% - 50vw + var(--az-scrollbar-compensation, 0px) / 2);
+}
+.wp-block-ai-zippy-child-holistic-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  min-height: var(--az-child-hero-min-height, 78vh);
+  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--wp--preset--color--white);
+  font-family: var(--wp--preset--font-family--system);
+  text-align: center;
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--wp--preset--color--black);
+  opacity: var(--az-child-hero-overlay-opacity, 0.55);
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 840px);
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.625rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  color: var(--wp--preset--color--white);
+  text-wrap: balance;
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__description {
+  margin: 1rem auto 0;
+  width: min(100%, 690px);
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--wp--preset--color--white) 92%, transparent);
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__actions {
+  margin-top: 1.75rem;
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.55rem;
+  border: 1px solid var(--wp--preset--color--white);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--wp--preset--color--white);
+  font-size: 1.05rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__button:hover,
+.wp-block-ai-zippy-child-holistic-hero .az-child-hero__button:focus-visible {
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+@media (max-width: 767px) {
+  .wp-block-ai-zippy-child-holistic-hero {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .wp-block-ai-zippy-child-holistic-hero .az-child-hero__button {
+    width: 100%;
+    max-width: 240px;
+  }
+}

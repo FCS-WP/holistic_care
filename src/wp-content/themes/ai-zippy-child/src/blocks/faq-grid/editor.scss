@@ -1,0 +1,13 @@
+.wp-block-ai-zippy-child-faq-grid {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+		outline-offset: 3px;
+		border-radius: 6px;
+	}
+
+	.az-child-faq__title:empty::before,
+	.az-child-faq__question:empty::before,
+	.az-child-faq__answer:empty::before {
+		opacity: 0.6;
+	}
+}

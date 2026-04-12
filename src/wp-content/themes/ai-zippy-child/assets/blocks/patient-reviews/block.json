@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ai-zippy-child/patient-reviews",
+  "version": "1.0.0",
+  "title": "Patient Reviews Grid",
+  "category": "ai-zippy",
+  "icon": "format-quote",
+  "description": "Reviews section with heading and repeatable testimonial cards.",
+  "keywords": [
+    "reviews",
+    "testimonials",
+    "patients",
+    "quotes"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "sectionLabel": {
+      "type": "string",
+      "default": "Reviews"
+    },
+    "title": {
+      "type": "string",
+      "default": "Hear what our patients say"
+    },
+    "forceFullWidth": {
+      "type": "boolean",
+      "default": true
+    },
+    "reviews": {
+      "type": "array",
+      "default": [
+        {
+          "name": "Chelsia Lee",
+          "content": "I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/120x120"
+        },
+        {
+          "name": "Chelsia Lee",
+          "content": "I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/120x120"
+        },
+        {
+          "name": "Chelsia Lee",
+          "content": "I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/120x120"
+        }
+      ]
+    }
+  },
+  "textdomain": "ai-zippy-child",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

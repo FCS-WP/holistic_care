@@ -1,0 +1,31 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/announcements-slider/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-announcements-slider .az-child-announcement__preview {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.wp-block-ai-zippy-child-announcements-slider .az-child-announcement__dots-preview {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+.wp-block-ai-zippy-child-announcements-slider .az-child-announcement__dots-preview span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+}
+.wp-block-ai-zippy-child-announcements-slider .az-child-announcement__dots-preview span:first-child {
+  background: var(--wp--preset--color--primary);
+}
+.wp-block-ai-zippy-child-announcements-slider .block-editor-rich-text__editable:focus {
+  outline: 2px solid color-mix(in srgb, var(--wp--preset--color--black) 25%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=index.css.map*/

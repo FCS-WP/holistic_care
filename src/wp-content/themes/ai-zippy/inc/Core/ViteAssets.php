@@ -43,9 +43,17 @@ class ViteAssets
      */
     public static function addModuleType(string $tag, string $handle): string
     {
-        if (str_starts_with($handle, 'ai-zippy-')) {
+        $module_handles = [
+            'ai-zippy-theme',
+            'ai-zippy-cart',
+            'ai-zippy-checkout',
+            'ai-zippy-shop-filter',
+        ];
+
+        if (in_array($handle, $module_handles, true)) {
             return str_replace(' src=', ' type="module" src=', $tag);
         }
+
         return $tag;
     }
 

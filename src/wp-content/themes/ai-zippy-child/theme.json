@@ -4,5 +4,50 @@
 	"settings": {
 		"appearanceTools": true
 	},
-	"styles": {}
+	"styles": {
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "clamp(2rem, 4vw, 3.5rem)",
+					"fontWeight": "700",
+					"lineHeight": "1.12"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "clamp(1.75rem, 3.2vw, 2.75rem)",
+					"fontWeight": "700",
+					"lineHeight": "1.16"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "clamp(1.5rem, 2.6vw, 2.125rem)",
+					"fontWeight": "600",
+					"lineHeight": "1.2"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "clamp(1.25rem, 2vw, 1.75rem)",
+					"fontWeight": "600",
+					"lineHeight": "1.24"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "clamp(1.125rem, 1.5vw, 1.375rem)",
+					"fontWeight": "600",
+					"lineHeight": "1.3"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "clamp(1rem, 1.2vw, 1.125rem)",
+					"fontWeight": "600",
+					"lineHeight": "1.35"
+				}
+			}
+		}
+	}
 }

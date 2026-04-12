@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ai-zippy-child/announcements-slider",
+	"version": "1.0.0",
+	"title": "Announcements Slider",
+	"category": "ai-zippy",
+	"icon": "megaphone",
+	"description": "Announcement carousel using Slick Slider.",
+	"keywords": ["announcement", "slider", "carousel", "notice"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"sectionLabel": {
+			"type": "string",
+			"default": "Announcements"
+		},
+		"forceFullWidth": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoplaySpeed": {
+			"type": "number",
+			"default": 4500
+		},
+		"slides": {
+			"type": "array",
+			"default": [
+				{
+					"title": "Services and Cardholders",
+					"content": "Dear patients, HealthierSG, MSG@gov, Baby Bonus (CDA), CDC Vouchers & Teleconsultation are now available! We are also PHPC accredited & welcome the following card holders - CHAS, Pioneer, Merdeka, Alliance Healthcare, iHP, Mednefit & Raffles!"
+				},
+				{
+					"title": "Clinic Operating Hours",
+					"content": "Our clinic opens daily with extended evening consultations. Please book ahead for chronic care and preventive screening slots."
+				},
+				{
+					"title": "New Health Packages",
+					"content": "Comprehensive family and women wellness packages are now available. Contact us to get personalized recommendations."
+				}
+			]
+		}
+	},
+	"textdomain": "ai-zippy-child",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

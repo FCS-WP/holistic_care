@@ -1,0 +1,13 @@
+.wp-block-ai-zippy-child-location-map {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+		outline-offset: 3px;
+		border-radius: 6px;
+	}
+
+	.az-child-location-map__title:empty::before,
+	.az-child-location-map__description:empty::before,
+	.az-child-location-map__address:empty::before {
+		opacity: 0.6;
+	}
+}

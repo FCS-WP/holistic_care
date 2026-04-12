@@ -1,0 +1,41 @@
+.wp-block-ai-zippy-child-announcements-slider {
+	.az-child-announcement__preview {
+		display: grid;
+		gap: 0.8rem;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	.az-child-announcement__dots-preview {
+		display: flex;
+		justify-content: center;
+		gap: 0.55rem;
+		margin-top: 0.75rem;
+
+		span {
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+			background: color-mix(
+				in srgb,
+				var(--wp--preset--color--primary) 35%,
+				transparent
+			);
+		}
+
+		span:first-child {
+			background: var(--wp--preset--color--primary);
+		}
+	}
+
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid
+			color-mix(
+				in srgb,
+				var(--wp--preset--color--black) 25%,
+				transparent
+			);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+}

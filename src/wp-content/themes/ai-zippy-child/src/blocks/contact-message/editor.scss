@@ -1,0 +1,13 @@
+.wp-block-ai-zippy-child-contact-message {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+		outline-offset: 3px;
+		border-radius: 6px;
+	}
+
+	.az-child-contact__title:empty::before,
+	.az-child-contact__description:empty::before,
+	.az-child-contact__form-title:empty::before {
+		opacity: 0.6;
+	}
+}

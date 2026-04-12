@@ -1,0 +1,167 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ai-zippy-child/services-showcase",
+  "version": "1.0.0",
+  "title": "Services Showcase",
+  "category": "ai-zippy",
+  "icon": "screenoptions",
+  "description": "Grid of healthcare services with image cards and detailed offerings.",
+  "keywords": [
+    "services",
+    "clinic",
+    "healthcare",
+    "grid"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "sectionLabel": {
+      "type": "string",
+      "default": "Our Services"
+    },
+    "forceFullWidth": {
+      "type": "boolean",
+      "default": true
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Family Care",
+          "caption": "Providing immediate care for your everyday health needs.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Acute Illness Management",
+              "description": "Treatment for flu, headaches, and common infections."
+            },
+            {
+              "title": "Minor Procedures",
+              "description": "In-clinic wound stitching, dressing, and skin surgeries."
+            },
+            {
+              "title": "Dermatological Care",
+              "description": "Expert management for acne, rashes, and hyperpigmentation."
+            }
+          ]
+        },
+        {
+          "title": "Chronic Care",
+          "caption": "Partnering with you for long-term health and vitality.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Chronic Disease Management",
+              "description": "Targeted care for Hypertension, Cholesterol, and Diabetes."
+            },
+            {
+              "title": "Respiratory Health",
+              "description": "Dedicated Asthma control and management plans."
+            },
+            {
+              "title": "Weight Management",
+              "description": "Evidence-based guidance to help you reach your health goals."
+            }
+          ]
+        },
+        {
+          "title": "Women's Medical Care",
+          "caption": "Private and compassionate care tailored to women's health.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Preventive Screening",
+              "description": "Regular PAP Smears and wellness checkups."
+            },
+            {
+              "title": "Family Planning",
+              "description": "Professional contraceptive advice and options."
+            },
+            {
+              "title": "Life Transitions",
+              "description": "Expert Menopause management and hormonal support."
+            }
+          ]
+        },
+        {
+          "title": "Child Medical Care",
+          "caption": "Supporting your child's growth from their very first steps.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Immunisation",
+              "description": "Full suite of childhood vaccinations and boosters."
+            },
+            {
+              "title": "Growth Tracking",
+              "description": "Comprehensive developmental assessments."
+            },
+            {
+              "title": "Paediatric Nutrition",
+              "description": "Expert advice to ensure healthy physical and mental growth."
+            }
+          ]
+        },
+        {
+          "title": "Vocational Care",
+          "caption": "Efficient medical clearances for work and school requirements.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Employment Screenings",
+              "description": "Work Permit and Domestic Helper checkups."
+            },
+            {
+              "title": "Education Clearances",
+              "description": "OBS, School, and University medical certifications."
+            },
+            {
+              "title": "Statutory Exams",
+              "description": "Prompt and professional medical examinations."
+            }
+          ]
+        },
+        {
+          "title": "Aesthetic Services",
+          "caption": "Where medical science meets skin confidence.",
+          "imageId": 0,
+          "imageUrl": "https://placehold.co/360x280",
+          "items": [
+            {
+              "title": "Anti-Aging",
+              "description": "Advanced treatments to restore youthful skin and elasticity."
+            },
+            {
+              "title": "Clear Skin Solutions",
+              "description": "Specialized medical treatments for acne and scarring."
+            },
+            {
+              "title": "Customised Care",
+              "description": "Medical-grade facials and targeted pigmentation therapy."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "textdomain": "ai-zippy-child",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
