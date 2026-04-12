@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ai-zippy-child/location-map",
+  "version": "1.0.0",
+  "title": "Location Map Section",
+  "category": "ai-zippy",
+  "icon": "location-alt",
+  "description": "Clinic location section with address details and Google Maps embed.",
+  "keywords": [
+    "map",
+    "location",
+    "contact",
+    "clinic"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "sectionLabel": {
+      "type": "string",
+      "default": "Find Us"
+    },
+    "title": {
+      "type": "string",
+      "default": "Visit Our Clinic"
+    },
+    "description": {
+      "type": "string",
+      "default": "Conveniently located in the heart of Sengkang, our clinic is easy to reach whether you are coming by foot, car, or public transport."
+    },
+    "address": {
+      "type": "string",
+      "default": "Block 455, Sengkang West Avenue, #01-10, Singapore 790455"
+    },
+    "supportText": {
+      "type": "string",
+      "default": "Tap below to open directions in Google Maps."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Open In Google Maps"
+    },
+    "mapUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "forceFullWidth": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "ai-zippy-child",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

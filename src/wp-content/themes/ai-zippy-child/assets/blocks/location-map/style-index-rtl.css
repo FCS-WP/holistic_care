@@ -1,0 +1,234 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/location-map/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-location-map.az-force-fullwidth {
+  width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+  max-width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+  margin-right: calc(50% - 50vw + var(--az-scrollbar-compensation, 0px) / 2);
+  margin-left: calc(50% - 50vw + var(--az-scrollbar-compensation, 0px) / 2);
+}
+.wp-block-ai-zippy-child-location-map {
+  --az-map-bg: #e8dfd6;
+  --az-map-surface: #fffdfb;
+  --az-map-title: #133036;
+  --az-map-copy: #516067;
+  --az-map-accent: #0b808b;
+  --az-map-leaf: #7bb34c;
+  position: relative;
+  padding: clamp(1.8rem, 4vw, 3.4rem) 1rem;
+  background: linear-gradient(-180deg, rgba(255, 255, 255, 0.22), transparent 18%), var(--az-map-bg);
+  font-family: var(--wp--preset--font-family--system);
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  position: relative;
+}
+.wp-block-ai-zippy-child-location-map.alignfull .az-child-location-map__inner, .wp-block-ai-zippy-child-location-map.az-force-fullwidth .az-child-location-map__inner {
+  max-width: none;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__eyebrow {
+  margin: 0;
+  color: var(--az-map-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__title {
+  margin: 0.35rem 0 0;
+  color: var(--az-map-title);
+  font-family: inherit;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__description {
+  margin: 0.55rem 0 0;
+  color: var(--az-map-copy);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__address-card {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 0.95rem;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__pin {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(-145deg, #9ff0ee, #4dd4d6);
+  color: #0a6471;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__pin svg {
+  width: 20px;
+  height: 20px;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__pin path {
+  fill: currentColor;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__pin circle {
+  fill: #fff;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__address-label {
+  color: #7a8180;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__address {
+  margin-top: 0.15rem;
+  color: var(--az-map-title);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__support {
+  margin: 0.8rem 0 0;
+  color: var(--az-map-copy);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  background: var(--az-map-accent);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 18px rgba(11, 128, 139, 0.16);
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-card {
+  position: relative;
+  min-height: 540px;
+  padding: 1.15rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 34px;
+  box-shadow: 0 18px 42px rgba(18, 28, 34, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  overflow: hidden;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-frame,
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder {
+  position: absolute;
+  inset: 1.15rem;
+  display: block;
+  width: calc(100% - 2.3rem);
+  height: calc(100% - 2.3rem);
+  border: 0;
+  border-radius: 26px;
+  background: #ddd5ce;
+  overflow: hidden;
+  z-index: 1;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder {
+  display: grid;
+  place-items: center;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder-grid {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px), linear-gradient(-90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px), linear-gradient(-135deg, rgba(11, 128, 139, 0.1), rgba(255, 255, 255, 0.2));
+  background-size: 36px 36px, 36px 36px, cover;
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder-copy {
+  position: relative;
+  max-width: 22ch;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  background: rgba(255, 253, 251, 0.9);
+  color: var(--az-map-copy);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(17, 27, 33, 0.08);
+}
+.wp-block-ai-zippy-child-location-map .az-child-location-map__info-card {
+  position: absolute;
+  right: 2.3rem;
+  bottom: 2.3rem;
+  z-index: 2;
+  width: min(390px, 100% - 4.6rem);
+  padding: 1.35rem 1.4rem;
+  background: rgba(255, 253, 251, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 22px;
+  box-shadow: 0 14px 28px rgba(17, 27, 33, 0.12), 0 1px 0 rgba(255, 255, 255, 0.82) inset;
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 780px) {
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-card {
+    min-height: 500px;
+    padding: 0.9rem;
+    border-radius: 28px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-frame,
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder {
+    inset: 0.9rem;
+    width: calc(100% - 1.8rem);
+    height: calc(100% - 1.8rem);
+    border-radius: 22px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__info-card {
+    right: 1.55rem;
+    left: 1.55rem;
+    bottom: 1.55rem;
+    width: auto;
+  }
+}
+@media (max-width: 640px) {
+  .wp-block-ai-zippy-child-location-map {
+    padding-right: 0.92rem;
+    padding-left: 0.92rem;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-card {
+    min-height: 460px;
+    padding: 0.72rem;
+    border-radius: 24px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-frame,
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__map-placeholder {
+    inset: 0.72rem;
+    width: calc(100% - 1.44rem);
+    height: calc(100% - 1.44rem);
+    border-radius: 18px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__info-card {
+    right: 1.15rem;
+    left: 1.15rem;
+    bottom: 1.15rem;
+    padding: 1.1rem 1rem;
+    border-radius: 18px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__title {
+    font-size: 1.08rem;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__description {
+    font-size: 0.9rem;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__address-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__pin {
+    width: 40px;
+    height: 40px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__pin svg {
+    width: 18px;
+    height: 18px;
+  }
+  .wp-block-ai-zippy-child-location-map .az-child-location-map__button {
+    width: 100%;
+  }
+}

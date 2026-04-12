@@ -1,0 +1,16 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/patient-reviews/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-patient-reviews .block-editor-rich-text__editable:focus {
+  outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__title:empty::before,
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__content:empty::before,
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__name:empty::before,
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__eyebrow:empty::before {
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=index.css.map*/

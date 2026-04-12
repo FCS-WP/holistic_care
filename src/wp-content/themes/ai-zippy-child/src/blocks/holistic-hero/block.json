@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ai-zippy-child/holistic-hero",
+	"version": "1.0.0",
+	"title": "Holistic Hero Banner",
+	"category": "ai-zippy",
+	"icon": "cover-image",
+	"description": "Centered hero banner with background image, headline, description, and CTA button.",
+	"keywords": ["hero", "banner", "cover", "wellness"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Your Family's Partner in Total Wellness."
+		},
+		"description": {
+			"type": "string",
+			"default": "At Holistic Care, we believe being well is more than just physical. We treat the person, not just the symptoms, through every stage of life."
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Shop Now"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": "/shop"
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"forceFullWidth": {
+			"type": "boolean",
+			"default": true
+		},
+		"backgroundImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"backgroundImageUrl": {
+			"type": "string",
+			"default": "https://placehold.co/1920x1080"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 55
+		},
+		"minHeight": {
+			"type": "string",
+			"default": "78vh"
+		}
+	},
+	"textdomain": "ai-zippy-child",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

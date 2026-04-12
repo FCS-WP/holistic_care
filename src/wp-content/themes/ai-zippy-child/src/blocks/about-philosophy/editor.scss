@@ -1,0 +1,13 @@
+.wp-block-ai-zippy-child-about-philosophy {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	.az-child-about__title:empty::before,
+	.az-child-about__description:empty::before,
+	.az-child-about__eyebrow:empty::before {
+		opacity: 0.62;
+	}
+}

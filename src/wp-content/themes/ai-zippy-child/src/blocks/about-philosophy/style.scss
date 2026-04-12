@@ -1,0 +1,169 @@
+.wp-block-ai-zippy-child-about-philosophy {
+	&.az-force-fullwidth {
+		width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+		max-width: calc(100vw - var(--az-scrollbar-compensation, 0px));
+		margin-left: calc(50% - 50vw + (var(--az-scrollbar-compensation, 0px) / 2));
+		margin-right: calc(50% - 50vw + (var(--az-scrollbar-compensation, 0px) / 2));
+	}
+
+	--az-about-bg: #d8d0cb;
+	--az-about-title: #007f90;
+	--az-about-accent: #058f9d;
+	--az-about-leaf: #7fba52;
+	--az-about-text: #1f2d34;
+
+	position: relative;
+	overflow: hidden;
+	padding: clamp(2.25rem, 4.8vw, 4.25rem) 1.1rem;
+	background: var(--az-about-bg);
+	font-family: var(--wp--preset--font-family--system);
+
+	&::after {
+		content: "";
+		position: absolute;
+		right: max(0.5rem, 2vw);
+		top: 50%;
+		transform: translateY(-50%);
+		width: min(24vw, 290px);
+		aspect-ratio: 1 / 1.1;
+		pointer-events: none;
+		opacity: 0.95;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 300'%3E%3Cg stroke='%237fba52' stroke-width='2' fill='none' stroke-linecap='round'%3E%3Cpath d='M24 172 C84 150,122 130,172 130 C205 130,230 136,252 146'/%3E%3Cpath d='M133 130 C132 98,138 66,146 30'/%3E%3Cpath d='M141 93 C164 76,181 61,197 41'/%3E%3Cpath d='M146 110 C170 104,192 93,211 79'/%3E%3Cpath d='M118 141 C94 116,79 96,67 67'/%3E%3Cpath d='M108 155 C82 155,58 148,36 137'/%3E%3Cpath d='M70 98 C86 95,100 85,111 70'/%3E%3Cpath d='M164 130 C180 153,198 173,222 189'/%3E%3Cpath d='M179 130 C203 125,223 113,241 98'/%3E%3Cpath d='M146 30 C157 45,167 61,173 80'/%3E%3Cpath d='M140 30 C130 44,122 61,118 79'/%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	.az-child-about__inner {
+		position: relative;
+		z-index: 1;
+		max-width: 1120px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+		align-items: center;
+		gap: clamp(1.35rem, 4vw, 3rem);
+	}
+
+	.az-child-about__content {
+		max-width: 610px;
+	}
+
+	.az-child-about__eyebrow {
+		margin: 0;
+		color: var(--az-about-leaf);
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+	}
+
+	.az-child-about__title {
+		margin: 0.38rem 0 0;
+		color: var(--az-about-title);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		font-weight: 500;
+		line-height: 1.06;
+		text-wrap: balance;
+	}
+
+	.az-child-about__description {
+		margin: clamp(1.15rem, 2.4vw, 1.75rem) 0 0;
+		color: var(--az-about-text);
+		font-size: clamp(1rem, 1.1vw, 1.2rem);
+		line-height: 1.7;
+		max-width: 60ch;
+	}
+
+	.az-child-about__media-wrap {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		width: min(100%, 620px);
+		margin: 0 auto;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: var(--az-about-accent);
+			border-radius: 8px;
+			transform: translate(-12px, 8px);
+			pointer-events: none;
+			z-index: 0;
+		}
+	}
+
+	.az-child-about__media-frame {
+		position: relative;
+		width: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 8px 24px rgba(18, 29, 37, 0.09);
+		background: #d6dadd;
+		transform: translateY(-4px);
+		z-index: 1;
+	}
+
+	.az-child-about__media {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	.az-child-about__media--placeholder {
+		display: grid;
+		place-items: center;
+		color: #6b7680;
+		font-size: 0.95rem;
+		border-radius: 8px;
+	}
+
+	@media (max-width: 1120px) {
+		&::after {
+			width: min(20vw, 230px);
+			right: 0.3rem;
+		}
+
+		.az-child-about__inner {
+			grid-template-columns: 1fr;
+		}
+
+		.az-child-about__content {
+			max-width: 100%;
+		}
+
+		.az-child-about__description {
+			max-width: 68ch;
+		}
+	}
+
+	@media (max-width: 720px) {
+		padding-left: 0.95rem;
+		padding-right: 0.95rem;
+
+		&::after {
+			display: none;
+		}
+
+		.az-child-about__title {
+			font-size: clamp(1.75rem, 8vw, 2.5rem);
+		}
+
+		.az-child-about__description {
+			font-size: 1rem;
+		}
+
+		.az-child-about__media-wrap {
+			&::before {
+				transform: translate(-6px, 6px);
+			}
+		}
+
+		.az-child-about__media-frame {
+			transform: translateY(-3px);
+		}
+	}
+}

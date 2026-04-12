@@ -1,0 +1,17 @@
+.wp-block-ai-zippy-child-services-showcase {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid
+			color-mix(
+				in srgb,
+				var(--wp--preset--color--black) 25%,
+				transparent
+			);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	.az-child-services__caption:empty::before,
+	.az-child-services__item-desc:empty::before {
+		opacity: 0.65;
+	}
+}

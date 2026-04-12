@@ -1,0 +1,18 @@
+.wp-block-ai-zippy-child-holistic-hero {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid
+			color-mix(
+				in srgb,
+				var(--wp--preset--color--white) 85%,
+				transparent
+			);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
+
+	.az-child-hero__title:empty::before,
+	.az-child-hero__description:empty::before,
+	.az-child-hero__button:empty::before {
+		opacity: 0.65;
+	}
+}

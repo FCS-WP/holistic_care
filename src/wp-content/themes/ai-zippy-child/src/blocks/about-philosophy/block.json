@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ai-zippy-child/about-philosophy",
+	"version": "1.0.0",
+	"title": "About Philosophy Section",
+	"category": "ai-zippy",
+	"icon": "welcome-learn-more",
+	"description": "Two-column About section with label, heading, description, and clinic image.",
+	"keywords": ["about", "philosophy", "clinic", "section"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"sectionLabel": {
+			"type": "string",
+			"default": "About Us"
+		},
+		"title": {
+			"type": "string",
+			"default": "Beyond the Physical: Our Philosophy of Care"
+		},
+		"description": {
+			"type": "string",
+			"default": "Your health journey is personal, and at Holistic Care, we treat it that way. As your trusted family doctors in the heart of the community, we offer a comprehensive suite of services—ranging from pediatric and adult medicine to minor surgical procedures and medical aesthetics. By integrating physical, mental, and emotional health, we help you and your loved ones stay well, stay confident, and live life to the fullest."
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": "https://placehold.co/1000x650"
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": "Holistic Care clinic reception"
+		},
+		"forceFullWidth": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"textdomain": "ai-zippy-child",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

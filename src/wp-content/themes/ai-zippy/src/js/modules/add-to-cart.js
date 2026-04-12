@@ -103,8 +103,15 @@ function updateMiniCart(cart) {
 		} catch { /* wp.data not ready */ }
 	}
 
-	// 5. Dispatch WC blocks event for full refresh
-	document.body.dispatchEvent(new Event("wc-blocks_added_to_cart"));
+	// 5. Dispatch WC blocks event so the mini cart drawer refreshes its store data.
+	document.body.dispatchEvent(
+		new CustomEvent("wc-blocks_added_to_cart", {
+			bubbles: true,
+			detail: {
+				preserveCartData: false,
+			},
+		}),
+	);
 
 	// 6. Dispatch jQuery event (some WC themes/plugins listen for this)
 	if (typeof jQuery !== "undefined") {

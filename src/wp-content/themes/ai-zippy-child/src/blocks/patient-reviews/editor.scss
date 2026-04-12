@@ -1,0 +1,14 @@
+.wp-block-ai-zippy-child-patient-reviews {
+	.block-editor-rich-text__editable:focus {
+		outline: 2px solid color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	.az-child-reviews__title:empty::before,
+	.az-child-reviews__content:empty::before,
+	.az-child-reviews__name:empty::before,
+	.az-child-reviews__eyebrow:empty::before {
+		opacity: 0.6;
+	}
+}

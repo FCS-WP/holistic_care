@@ -1,0 +1,111 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ai-zippy-child/contact-message",
+	"version": "1.0.0",
+	"title": "Contact Message Section",
+	"category": "ai-zippy",
+	"icon": "email-alt",
+	"description": "Two-column contact section with info cards and a message form preview.",
+	"keywords": ["contact", "message", "form", "clinic"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": "Contact Us"
+		},
+		"sectionDescription": {
+			"type": "string",
+			"default": "We're here to help you on your journey to holistic wellness. Reach out to us through any of the channels below."
+		},
+		"contacts": {
+			"type": "array",
+			"default": [
+				{
+					"icon": "phone",
+					"label": "Main Line",
+					"value": "6513 4757"
+				},
+				{
+					"icon": "whatsapp",
+					"label": "Whatsapp",
+					"value": "8893 4529"
+				},
+				{
+					"icon": "email",
+					"label": "Email",
+					"value": "clinic@holisticcare.sg"
+				},
+				{
+					"icon": "address",
+					"label": "Address",
+					"value": "Block 455, Sengkang West Avenue"
+				}
+			]
+		},
+		"formTitle": {
+			"type": "string",
+			"default": "Leave A Message"
+		},
+		"nameLabel": {
+			"type": "string",
+			"default": "Your Name"
+		},
+		"namePlaceholder": {
+			"type": "string",
+			"default": "John Doe"
+		},
+		"phoneLabel": {
+			"type": "string",
+			"default": "Your Phone"
+		},
+		"phonePlaceholder": {
+			"type": "string",
+			"default": "+65 0000 0000"
+		},
+		"emailLabel": {
+			"type": "string",
+			"default": "Your Email"
+		},
+		"emailPlaceholder": {
+			"type": "string",
+			"default": "john@example.com"
+		},
+		"subjectLabel": {
+			"type": "string",
+			"default": "Subject"
+		},
+		"subjectPlaceholder": {
+			"type": "string",
+			"default": "General Enquiry"
+		},
+		"messageLabel": {
+			"type": "string",
+			"default": "Message"
+		},
+		"messagePlaceholder": {
+			"type": "string",
+			"default": "How can we help you today?"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Send Message"
+		},
+		"forceFullWidth": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"textdomain": "ai-zippy-child",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

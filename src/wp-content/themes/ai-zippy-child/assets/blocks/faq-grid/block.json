@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ai-zippy-child/faq-grid",
+  "version": "1.0.0",
+  "title": "FAQ Grid",
+  "category": "ai-zippy",
+  "icon": "editor-help",
+  "description": "Two-column FAQ section with expandable question items.",
+  "keywords": [
+    "faq",
+    "questions",
+    "accordion",
+    "clinic"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "question": "General Questions",
+          "answer": "Learn about our operating hours, location details, and general clinic policies. We strive to provide a seamless administrative experience."
+        },
+        {
+          "question": "Medical Care",
+          "answer": "Information regarding chronic disease management, acute consultations, and our approach to primary healthcare for all age groups."
+        },
+        {
+          "question": "Health Screening",
+          "answer": "Details on our comprehensive health screening packages, including pre-screening preparation and post-screening reviews."
+        },
+        {
+          "question": "Vaccinations",
+          "answer": "Stay protected with our range of vaccinations for children, adults, and travelers. We follow the National Childhood Immunization Schedule."
+        },
+        {
+          "question": "Payment & Subsidies",
+          "answer": "We accept CHAS, Medisave, and various corporate insurance schemes. Find out how you can maximize your subsidies with us."
+        },
+        {
+          "question": "Visiting the Clinic",
+          "answer": "Directions for transport, parking facilities near Block 455, and what to bring for your first visit to Holistic Care."
+        }
+      ]
+    },
+    "forceFullWidth": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "ai-zippy-child",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
