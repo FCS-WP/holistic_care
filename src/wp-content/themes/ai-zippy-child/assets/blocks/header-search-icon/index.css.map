@@ -1,0 +1,1 @@
+{"version":3,"file":"header-search-icon/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://ai-zippy/./src/wp-content/themes/ai-zippy-child/src/blocks/header-search-icon/editor.scss"],"sourcesContent":[".wp-block-ai-zippy-child-header-search-icon {\n\tcursor: pointer;\n}\n"],"names":[],"sourceRoot":""}

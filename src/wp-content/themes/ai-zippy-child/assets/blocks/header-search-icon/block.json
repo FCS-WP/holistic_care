@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ai-zippy-child/header-search-icon",
+  "version": "1.0.0",
+  "title": "Header Search Icon",
+  "category": "ai-zippy",
+  "icon": "search",
+  "description": "Single search icon button with a popup search form for the site header.",
+  "keywords": [
+    "header",
+    "search",
+    "icon"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": true
+  },
+  "attributes": {
+    "searchUrl": {
+      "type": "string",
+      "default": "/"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "Search"
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "Search..."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Search"
+    }
+  },
+  "textdomain": "ai-zippy-child",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

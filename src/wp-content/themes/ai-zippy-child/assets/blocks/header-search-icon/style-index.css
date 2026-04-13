@@ -1,0 +1,131 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/header-search-icon/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-header-search-icon {
+  display: inline-flex;
+}
+
+.wp-block-ai-zippy-child-header-search-icon .az-child-site-header__icon {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.wp-block-ai-zippy-child-header-search-icon .az-child-site-header__icon svg {
+  fill: none;
+  height: 22px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.3;
+  width: 22px;
+}
+
+.az-child-header-search__popup[hidden] {
+  display: none;
+}
+
+.az-child-header-search__popup {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  padding: clamp(1rem, 4vw, 2rem);
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 0.2s ease;
+  z-index: 1000001;
+}
+
+.az-child-header-search__popup.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.az-child-header-search__backdrop {
+  background: rgba(12, 22, 30, 0.48);
+  border: 0;
+  inset: 0;
+  position: absolute;
+}
+
+.az-child-header-search__dialog {
+  background: #ffffff;
+  border-radius: 8px;
+  max-width: 640px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  position: relative;
+  width: min(100%, 640px);
+}
+
+.az-child-header-search__close {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #111111;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 0.65rem;
+  top: 0.65rem;
+  width: 34px;
+}
+
+.az-child-header-search__close svg {
+  fill: none;
+  height: 18px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2.3;
+  width: 18px;
+}
+
+.az-child-header-search__form {
+  align-items: stretch;
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 2.2rem;
+}
+
+.az-child-header-search__field {
+  border: 1px solid rgba(17, 17, 17, 0.22);
+  border-radius: 8px;
+  flex: 1 1 auto;
+  font-size: 1rem;
+  min-height: 46px;
+  min-width: 0;
+  padding: 0 0.85rem;
+}
+
+.az-child-header-search__submit {
+  background: #007f90;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: 700;
+  min-height: 46px;
+  padding: 0 1rem;
+}
+
+.wp-block-group.az-child-site-header .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit,
+.wp-block-group.az-child-site-header .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit:hover,
+.wp-block-group.az-child-site-header .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit:focus-visible,
+.wp-block-group.az-child-site-header.is-scrolled .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit,
+.wp-block-group.az-child-site-header.is-scrolled .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit:hover,
+.wp-block-group.az-child-site-header.is-scrolled .az-child-site-header__right .wp-block-ai-zippy-child-header-search-icon.az-child-header-search .az-child-header-search__popup .az-child-header-search__submit:focus-visible {
+  color: #ffffff !important;
+}
+
+@media (max-width: 520px) {
+  .az-child-header-search__form {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,62 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"az-child-search-page","layout":{"type":"default"}} -->
+<main class="wp-block-group az-child-search-page">
+	<!-- wp:group {"className":"az-child-search-hero","layout":{"type":"constrained","contentSize":"1040px"}} -->
+	<div class="wp-block-group az-child-search-hero">
+
+		<!-- wp:query-title {"type":"search","textAlign":"center","className":"az-child-search-hero__title"} /-->
+
+		<!-- wp:paragraph {"align":"center","className":"az-child-search-hero__copy"} -->
+		<p class="has-text-align-center az-child-search-hero__copy">Find clinic updates, helpful articles, and useful pages.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search Holistic Care","buttonText":"Search","className":"az-child-search-hero__form"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"az-child-search-results","layout":{"type":"constrained","contentSize":"1040px"}} -->
+	<div class="wp-block-group az-child-search-results">
+		<!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"relevance","inherit":true},"className":"az-child-search-query"} -->
+		<div class="wp-block-query az-child-search-query">
+			<!-- wp:post-template {"className":"az-child-search-list"} -->
+				<!-- wp:group {"tagName":"article","className":"az-child-search-card","layout":{"type":"constrained"}} -->
+				<article class="wp-block-group az-child-search-card">
+					<!-- wp:group {"className":"az-child-search-card__body","layout":{"type":"constrained"}} -->
+					<div class="wp-block-group az-child-search-card__body">
+						<!-- wp:post-date {"className":"az-child-search-card__date"} /-->
+						<!-- wp:post-title {"isLink":true,"className":"az-child-search-card__title"} /-->
+						<!-- wp:post-excerpt {"excerptLength":24,"moreText":"Read more","className":"az-child-search-card__excerpt"} /-->
+					</div>
+					<!-- /wp:group -->
+				</article>
+				<!-- /wp:group -->
+			<!-- /wp:post-template -->
+
+			<!-- wp:query-pagination {"className":"az-child-search-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+				<!-- wp:query-pagination-previous /-->
+				<!-- wp:query-pagination-numbers /-->
+				<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+
+			<!-- wp:query-no-results -->
+				<!-- wp:group {"className":"az-child-search-empty","layout":{"type":"constrained","contentSize":"680px"}} -->
+				<div class="wp-block-group az-child-search-empty">
+					<!-- wp:heading {"textAlign":"center","level":2,"className":"az-child-search-empty__title"} -->
+					<h2 class="wp-block-heading has-text-align-center az-child-search-empty__title">No results found</h2>
+					<!-- /wp:heading -->
+
+					<!-- wp:paragraph {"align":"center","className":"az-child-search-empty__copy"} -->
+					<p class="has-text-align-center az-child-search-empty__copy">Try a new keyword or browse our latest updates.</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+			<!-- /wp:query-no-results -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

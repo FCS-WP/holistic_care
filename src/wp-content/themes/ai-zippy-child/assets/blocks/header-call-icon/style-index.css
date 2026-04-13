@@ -1,0 +1,23 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/wp-content/themes/ai-zippy-child/src/blocks/header-call-icon/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-ai-zippy-child-header-call-icon.az-child-site-header__icon {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.wp-block-ai-zippy-child-header-call-icon svg {
+  fill: none;
+  height: 22px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.3;
+  width: 22px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
