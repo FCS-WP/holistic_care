@@ -15,6 +15,7 @@ if (!is_array($reviews)) {
 	$reviews = [];
 }
 
+$review_count = count($reviews);
 $heading_id = !empty($title) ? wp_unique_id('az-reviews-title-') : '';
 
 $wrapper_config = [
@@ -38,7 +39,7 @@ $wrapper_attributes = get_block_wrapper_attributes($wrapper_config);
 			<h2 id="<?php echo esc_attr($heading_id); ?>" class="az-child-reviews__title"><?php echo $title; ?></h2>
 		<?php endif; ?>
 
-		<div class="az-child-reviews__grid mt-5">
+		<div class="az-child-reviews__grid js-az-child-reviews-slider mt-5" data-review-count="<?php echo esc_attr($review_count); ?>">
 			<?php foreach ($reviews as $review) : ?>
 				<?php
 				$name    = esc_html($review['name'] ?? '');
