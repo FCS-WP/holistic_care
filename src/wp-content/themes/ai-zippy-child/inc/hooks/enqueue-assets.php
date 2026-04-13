@@ -12,6 +12,7 @@ function ai_zippy_child_enqueue_assets(): void
     $utility_css = get_stylesheet_directory() . '/assets/css/utilities.css';
     $header_css = get_stylesheet_directory() . '/assets/css/header.css';
     $footer_css = get_stylesheet_directory() . '/assets/css/footer.css';
+    $search_css = get_stylesheet_directory() . '/assets/css/search.css';
     $form_js = get_stylesheet_directory() . '/assets/js/form-submit.js';
     $mobile_menu_js = get_stylesheet_directory() . '/assets/js/mobile-menu-fallback.js';
 
@@ -48,6 +49,15 @@ function ai_zippy_child_enqueue_assets(): void
             get_stylesheet_directory_uri() . '/assets/css/footer.css',
             [],
             filemtime($footer_css)
+        );
+    }
+
+    if (is_search() && file_exists($search_css)) {
+        wp_enqueue_style(
+            'ai-zippy-child-search',
+            get_stylesheet_directory_uri() . '/assets/css/search.css',
+            [],
+            filemtime($search_css)
         );
     }
 

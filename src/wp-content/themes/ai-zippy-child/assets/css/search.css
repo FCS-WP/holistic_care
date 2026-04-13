@@ -1,0 +1,165 @@
+.az-child-search-page {
+	background: #ffffff;
+	color: #111111;
+	padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.az-child-search-hero {
+	background: linear-gradient(135deg, rgba(0, 127, 144, 0.1), rgba(64, 169, 68, 0.08));
+	padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 2rem) clamp(2rem, 5vw, 3rem);
+}
+
+.az-child-search-hero__eyebrow {
+	color: #007f90;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin: 0 0 0.8rem;
+	text-transform: uppercase;
+}
+
+.az-child-search-hero__title {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 32px;
+	line-height: 1.25;
+	margin: 0 auto;
+	max-width: 820px;
+	text-align: center;
+}
+
+.az-child-search-hero__copy {
+	color: rgba(17, 17, 17, 0.72);
+	font-size: 1.05rem;
+	line-height: 1.6;
+	margin: 1rem auto 1.6rem;
+	max-width: 620px;
+	text-align: center;
+}
+
+.az-child-search-hero__form.wp-block-search {
+	align-items: stretch;
+	display: flex;
+	gap: 0.65rem;
+	max-width: 720px;
+}
+
+.az-child-search-hero__form .wp-block-search__inside-wrapper {
+	display: flex;
+	gap: 0.65rem;
+	width: 100%;
+}
+
+.az-child-search-hero__form .wp-block-search__input {
+	background: #ffffff;
+	border: 1px solid rgba(17, 17, 17, 0.14);
+	border-radius: 8px;
+	color: #111111;
+	min-height: 50px;
+	padding: 0 1rem;
+}
+
+.az-child-search-hero__form .wp-block-search__button {
+	background: #007f90;
+	border: 0;
+	border-radius: 8px;
+	color: #ffffff !important;
+	font-weight: 700;
+	margin: 0;
+	min-height: 50px;
+	padding: 0 1.25rem;
+}
+
+.az-child-search-hero__form .wp-block-search__button:hover,
+.az-child-search-hero__form .wp-block-search__button:focus-visible {
+	color: #ffffff !important;
+}
+
+.az-child-search-results {
+	padding: clamp(2rem, 5vw, 3.8rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+}
+
+.az-child-search-list {
+	display: grid;
+	gap: 0.9rem;
+}
+
+.az-child-search-card {
+	background: #ffffff;
+	border: 1px solid rgba(17, 17, 17, 0.12);
+	border-radius: 8px;
+	overflow: clip;
+}
+
+.az-child-search-card__body {
+	padding: clamp(1rem, 3vw, 1.35rem);
+}
+
+.az-child-search-card__date {
+	color: #007f90;
+	font-size: 0.82rem;
+	font-weight: 700;
+	margin: 0 0 0.55rem;
+}
+
+.az-child-search-card__title {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(1.25rem, 2vw, 1.55rem);
+	line-height: 1.18;
+	margin: 0 0 0.75rem;
+}
+
+.az-child-search-card__title a {
+	color: #111111;
+	text-decoration: none;
+}
+
+.az-child-search-card__title a:hover,
+.az-child-search-card__title a:focus-visible {
+	color: #007f90;
+}
+
+.az-child-search-card__excerpt {
+	color: rgba(17, 17, 17, 0.72);
+	font-size: 0.96rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.az-child-search-card__excerpt .wp-block-post-excerpt__more-link {
+	color: #007f90;
+	display: inline-flex;
+	font-weight: 700;
+	margin-top: 0.75rem;
+	text-decoration: none;
+}
+
+.az-child-search-pagination {
+	margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.az-child-search-pagination :is(a, span) {
+	color: #111111;
+	text-decoration: none;
+}
+
+.az-child-search-empty {
+	background: rgba(0, 127, 144, 0.06);
+	border-radius: 8px;
+	padding: clamp(2rem, 5vw, 3rem);
+}
+
+.az-child-search-empty__title {
+	font-family: Georgia, "Times New Roman", serif;
+	margin-top: 0;
+}
+
+.az-child-search-empty__copy {
+	color: rgba(17, 17, 17, 0.72);
+	margin-bottom: 1.4rem;
+}
+
+@media (max-width: 780px) {
+	.az-child-search-hero__form .wp-block-search__inside-wrapper {
+		flex-direction: column;
+	}
+}
