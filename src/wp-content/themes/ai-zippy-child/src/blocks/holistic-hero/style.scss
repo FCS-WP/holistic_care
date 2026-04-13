@@ -15,7 +15,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	color: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--black);
 	font-family: var(--wp--preset--font-family--system);
 	text-align: center;
 
@@ -37,7 +37,7 @@
 		font-size: clamp(2rem, 5vw, 3.625rem) !important;
 		line-height: 1.15 !important;
 		font-weight: 700 !important;
-		color: var(--wp--preset--color--white);
+		color: var(--wp--preset--color--black);
 		text-wrap: balance;
 	}
 
@@ -46,11 +46,7 @@
 		width: min(100%, 690px);
 		font-size: clamp(0.95rem, 1.5vw, 1.125rem);
 		line-height: 1.6;
-		color: color-mix(
-			in srgb,
-			var(--wp--preset--color--white) 92%,
-			transparent
-		);
+		color: var(--wp--preset--color--black);
 	}
 
 	.az-child-hero__actions {
@@ -62,10 +58,10 @@
 		align-items: center;
 		justify-content: center;
 		padding: 0.72rem 1.55rem;
-		border: 1px solid var(--wp--preset--color--white);
+		border: 1px solid var(--wp--preset--color--black);
 		border-radius: 4px;
 		background: transparent;
-		color: var(--wp--preset--color--white);
+		color: var(--wp--preset--color--black);
 		font-size: 1.05rem;
 		line-height: 1;
 		text-decoration: none;
@@ -74,8 +70,8 @@
 
 	.az-child-hero__button:hover,
 	.az-child-hero__button:focus-visible {
-		background: var(--wp--preset--color--white);
-		color: var(--wp--preset--color--primary);
+		background: var(--wp--preset--color--black);
+		color: var(--wp--preset--color--white);
 	}
 
 	@media (max-width: 767px) {

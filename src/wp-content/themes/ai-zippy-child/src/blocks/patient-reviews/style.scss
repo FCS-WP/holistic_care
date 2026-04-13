@@ -71,6 +71,78 @@
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: clamp(1rem, 2.2vw, 1.75rem);
 		align-items: stretch;
+
+		&.slick-slider {
+			position: relative;
+			display: block;
+			box-sizing: border-box;
+			user-select: none;
+			touch-action: pan-y;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.slick-list {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			margin: 0;
+			padding: 2.25rem 0 0.75rem;
+		}
+
+		.slick-track {
+			position: relative;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: stretch;
+		}
+
+		.slick-slide {
+			display: none;
+			float: left;
+			height: auto;
+			min-height: 1px;
+			box-sizing: border-box;
+			padding: 0 clamp(0.75rem, 1.5vw, 1.1rem);
+		}
+
+		&.slick-initialized .slick-slide {
+			display: block;
+		}
+
+		.slick-slide > div {
+			height: 100%;
+		}
+
+		.slick-dots {
+			margin: 0.85rem 0 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 0.55rem;
+
+			li {
+				display: flex;
+			}
+
+			button {
+				width: 9px;
+				height: 9px;
+				border: 0;
+				padding: 0;
+				background: color-mix(in srgb, var(--az-reviews-accent) 48%, transparent);
+				border-radius: 50%;
+				font-size: 0;
+				cursor: pointer;
+				transition: transform 0.22s ease, background 0.22s ease;
+			}
+
+			li.slick-active button {
+				transform: scale(1.12);
+				background: var(--az-reviews-accent);
+			}
+		}
 	}
 
 	.az-child-reviews__card {
@@ -134,12 +206,13 @@
 	}
 
 	.az-child-reviews__content {
-		margin: 0.78rem 0 0;
+		margin: 0.78rem auto 0;
 		color: var(--az-reviews-copy);
 		font-size: 0.92rem;
 		font-style: italic;
 		line-height: 1.4;
 		max-width: 28ch;
+		text-align: center;
 	}
 
 	@media (max-width: 980px) {
@@ -160,15 +233,24 @@
 		.az-child-reviews__grid {
 			grid-template-columns: 1fr;
 			gap: 1.85rem;
+
+			.slick-list {
+				overflow: hidden;
+				padding-top: 2.2rem;
+			}
+
+			.slick-slide {
+				padding: 0 0.75rem;
+			}
 		}
 
 		.az-child-reviews__card {
 			min-height: 0;
-			padding: 2.55rem 0.95rem 0.9rem;
+			padding: 4.35rem 1.05rem 1.05rem;
 		}
 
 		.az-child-reviews__avatar-wrap {
-			transform: translate(-50%, -30%);
+			transform: translate(-50%, -38%);
 		}
 	}
 }
