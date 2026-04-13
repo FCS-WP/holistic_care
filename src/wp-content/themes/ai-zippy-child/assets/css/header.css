@@ -321,7 +321,7 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 	}
 
 	.az-child-site-header__nav .wp-block-navigation-item__content {
-		font-size: 1.45rem;
+		font-size: 1rem;
 	}
 
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open,
@@ -331,28 +331,36 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 		inset: 0 !important;
 		width: 100vw !important;
 		height: 100dvh !important;
-		background: #fffdfb !important;
+		background: rgba(12, 22, 30, 0.46) !important;
 		z-index: 999999 !important;
-		align-items: stretch;
-		justify-content: stretch;
+		align-items: flex-start;
+		justify-content: flex-end;
 		padding: 0 !important;
 		visibility: visible !important;
 		opacity: 1 !important;
 		pointer-events: auto !important;
 		animation: az-child-mobile-menu-slide-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both !important;
-		transform-origin: left center;
+		transform-origin: right center;
 		transition: none !important;
 		will-change: transform;
 	}
 
+	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__responsive-close,
+	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-close {
+		height: 100%;
+		margin: 0;
+		width: 100%;
+	}
+
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__responsive-dialog,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
+		position: relative;
 		width: 100%;
 		max-width: none;
 		height: 100%;
 		margin: 0;
-		background: #fffdfb;
-		padding: clamp(1rem, 4vw, 1.4rem);
+		background: #ffffff;
+		padding: calc(max(1rem, env(safe-area-inset-top)) + 4.3rem) 1.1rem 1.4rem;
 		box-shadow: none;
 		overflow-y: auto;
 		animation: none !important;
@@ -363,19 +371,33 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__responsive-container-content,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
 		align-items: stretch;
-		justify-content: center;
-		min-height: calc(100dvh - 5rem);
-		padding-top: 2.8rem;
+		justify-content: flex-start;
+		min-height: auto;
+		padding-top: 0;
 		animation: none !important;
 		transform: translate3d(0, 0, 0) !important;
 		transition: none !important;
+	}
+
+	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__responsive-container-content::before,
+	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content::before {
+		color: #007f90;
+		content: "Menu";
+		display: block;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.05rem;
+		font-weight: 700;
+		letter-spacing: 0;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
 	}
 
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__container,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
 		align-items: stretch !important;
 		width: 100%;
-		gap: 0.35rem;
+		gap: 0.55rem;
 		animation: none !important;
 		transform: translate3d(0, 0, 0) !important;
 		transition: none !important;
@@ -384,24 +406,45 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-item__content,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
 		color: #111111 !important;
-		display: block;
+		background: #f2fbfc;
+		border: 1px solid rgba(3, 140, 155, 0.14);
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		width: 100%;
-		padding: 0.95rem 0.5rem;
-		border-bottom: 1px solid rgba(3, 140, 155, 0.12);
-		font-size: clamp(1.35rem, 6vw, 2rem);
-		line-height: 1.3;
-		text-align: center;
+		min-height: 54px;
+		padding: 0.88rem 1rem;
+		font-size: 1.45rem;
+		line-height: 1.2;
+		text-align: left;
 		text-shadow: none;
 		animation: none !important;
 		transform: translate3d(0, 0, 0) !important;
-		transition: color 0.2s ease, background 0.2s ease;
+		transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+	}
+
+	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-item.has-child > .wp-block-navigation-item__content::after,
+	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-submenu > .wp-block-navigation-item__content::after,
+	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child > .wp-block-navigation-item__content::after,
+	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-submenu > .wp-block-navigation-item__content::after {
+		border-right: 2px solid #007f90;
+		border-top: 2px solid #007f90;
+		content: "";
+		display: block;
+		flex: 0 0 auto;
+		height: 0.42rem;
+		transform: rotate(45deg);
+		width: 0.42rem;
 	}
 
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-item__content:hover,
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-item__content:focus-visible,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content:hover,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content:focus-visible {
-		color: #111111 !important;
+		background: #e6f6f8;
+		border-color: rgba(3, 140, 155, 0.28);
+		color: #007f90 !important;
 	}
 
 	body.home .wp-block-group.az-child-site-header:not(.is-scrolled) .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation-item__content,
@@ -419,19 +462,19 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 	.az-child-site-header .wp-block-navigation__responsive-container.az-child-menu-open .wp-block-navigation__responsive-container-close,
 	.az-child-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
 		display: inline-flex !important;
-		position: fixed !important;
+		position: absolute !important;
 		top: max(1rem, env(safe-area-inset-top));
-		right: max(1rem, env(safe-area-inset-right));
-		width: 44px;
-		height: 44px;
+		right: 1.1rem;
+		width: 42px;
+		height: 42px;
 		align-items: center;
 		justify-content: center;
 		padding: 0 !important;
 		border: 1px solid rgba(3, 140, 155, 0.16) !important;
-		border-radius: 999px;
+		border-radius: 8px;
 		background: #ffffff !important;
 		color: #111111 !important;
-		box-shadow: 0 10px 24px rgba(17, 26, 26, 0.12);
+		box-shadow: 0 10px 24px rgba(17, 26, 26, 0.1);
 		z-index: 1000000 !important;
 		opacity: 1 !important;
 		visibility: visible !important;
@@ -448,7 +491,7 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 
 @keyframes az-child-mobile-menu-slide-in {
 	from {
-		transform: translate3d(-100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
 	}
 
 	to {
