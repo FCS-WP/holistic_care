@@ -54,6 +54,16 @@ body.admin-bar .wp-site-blocks > .wp-block-group.az-child-site-header {
 .az-child-site-header__brand img {
 	height: auto;
 	max-width: min(220px, 39vw);
+	transition: filter 0.22s ease, opacity 0.22s ease;
+}
+
+body.home .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img,
+body.home .wp-site-blocks > .wp-block-template-part > .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img,
+body.home .wp-site-blocks > .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img,
+body.front-page .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img,
+body.front-page .wp-site-blocks > .wp-block-template-part > .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img,
+body.front-page .wp-site-blocks > .wp-block-group.az-child-site-header:not(.is-scrolled) .az-child-site-header__brand img {
+	filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.34));
 }
 
 .az-child-site-header__right {
