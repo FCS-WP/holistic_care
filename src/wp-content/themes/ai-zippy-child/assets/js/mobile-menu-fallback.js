@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+	const headers = document.querySelectorAll(".az-child-site-header");
+	const setHeaderScrollState = () => {
+		headers.forEach((header) => {
+			header.classList.toggle("is-scrolled", window.scrollY > 10);
+		});
+	};
+
+	if (headers.length) {
+		setHeaderScrollState();
+		window.addEventListener("scroll", setHeaderScrollState, { passive: true });
+	}
+
 	document.querySelectorAll(".az-child-site-header .wp-block-navigation").forEach((nav) => {
 		const openButton = nav.querySelector(".wp-block-navigation__responsive-container-open");
 		const container = nav.querySelector(".wp-block-navigation__responsive-container");

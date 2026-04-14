@@ -524,8 +524,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"index": 0,
-/******/ 			"./style-index": 0
+/******/ 			"faq-grid/index": 0,
+/******/ 			"faq-grid/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -575,7 +575,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/faq-grid/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["faq-grid/style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/faq-grid/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
