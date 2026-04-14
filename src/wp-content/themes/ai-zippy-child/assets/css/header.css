@@ -41,6 +41,22 @@ body.admin-bar .wp-site-blocks > .wp-block-group.az-child-site-header {
 	inset: 32px 0 auto 0;
 }
 
+@media (min-width: 601px) and (max-width: 782px) {
+	body.admin-bar .wp-block-group.az-child-site-header,
+	body.admin-bar .wp-site-blocks > .wp-block-template-part > .wp-block-group.az-child-site-header,
+	body.admin-bar .wp-site-blocks > .wp-block-group.az-child-site-header {
+		inset: 46px 0 auto 0;
+	}
+}
+
+@media (max-width: 600px) {
+	body.admin-bar .wp-block-group.az-child-site-header,
+	body.admin-bar .wp-site-blocks > .wp-block-template-part > .wp-block-group.az-child-site-header,
+	body.admin-bar .wp-site-blocks > .wp-block-group.az-child-site-header {
+		inset: 0 0 auto 0;
+	}
+}
+
 .az-child-site-header__inner {
 	margin: 0 auto;
 	max-width: 1280px;
@@ -510,12 +526,6 @@ body.front-page .wp-site-blocks > main.wp-block-group {
 }
 
 @media (max-width: 700px) {
-	body.admin-bar .wp-block-group.az-child-site-header,
-	body.admin-bar .wp-site-blocks > .wp-block-template-part > .wp-block-group.az-child-site-header,
-	body.admin-bar .wp-site-blocks > .wp-block-group.az-child-site-header {
-		inset: 46px 0 auto 0;
-	}
-
 	.az-child-site-header__brand img {
 		max-width: min(164px, 52vw);
 	}
