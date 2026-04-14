@@ -107,6 +107,20 @@ function ai_zippy_child_handle_form_submission(WP_REST_Request $request)
 		);
 	}
 
+	$configured_recipient = '';
+
+	if ('contact-message' === $form_id && !empty($fields['_recipient_email']) && !empty($fields['_recipient_signature'])) {
+		$recipient_candidate = sanitize_email((string) $fields['_recipient_email']);
+		$recipient_signature = (string) $fields['_recipient_signature'];
+		$expected_signature = hash_hmac('sha256', $recipient_candidate, wp_salt('auth'));
+
+		if (!empty($recipient_candidate) && is_email($recipient_candidate) && hash_equals($expected_signature, $recipient_signature)) {
+			$configured_recipient = $recipient_candidate;
+		}
+	}
+
+	unset($fields['_recipient_email'], $fields['_recipient_signature']);
+
 	$required_fields = apply_filters(
 		'ai_zippy_child_form_required_fields',
 		[
@@ -145,7 +159,7 @@ function ai_zippy_child_handle_form_submission(WP_REST_Request $request)
 
 	$recipient = apply_filters(
 		'ai_zippy_child_form_recipient',
-		get_option('admin_email'),
+		!empty($configured_recipient) ? $configured_recipient : get_option('admin_email'),
 		$form_id,
 		$fields,
 		$meta

@@ -97,12 +97,35 @@ __webpack_require__.r(__webpack_exports__);
 function normalizeReviews(reviews) {
   return Array.isArray(reviews) ? reviews : [];
 }
+function normalizeReviewContent(content) {
+  if (!content) {
+    return "";
+  }
+  let decodedContent = String(content);
+  if (typeof document !== "undefined") {
+    const decoder = document.createElement("textarea");
+    decoder.innerHTML = decodedContent;
+    decodedContent = decoder.value;
+  }
+  const withoutBreakTags = decodedContent.replace(/<\s*br\s*\/?>/gi, "\n").replace(/<\/p>\s*<p[^>]*>/gi, "\n\n").replace(/<\/?p[^>]*>/gi, "");
+  const withoutTags = withoutBreakTags.replace(/<[^>]*>/g, "");
+  return withoutTags.replace(/[ \t\r\n]+/g, " ").trim();
+}
+function getReviewCardClassName(review) {
+  const classNames = ["az-child-reviews__card"];
+  const content = normalizeReviewContent(review.content || "");
+  if ((review.reviewUrl || "") && content.length > 155) {
+    classNames.push("az-child-reviews__card--is-overflowing");
+  }
+  return classNames.join(" ");
+}
 function createReview() {
   return {
     name: "",
     content: "",
     imageId: 0,
-    imageUrl: ""
+    imageUrl: "",
+    reviewUrl: ""
   };
 }
 function Edit({
@@ -175,10 +198,18 @@ function Edit({
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Content", "ai-zippy-child"),
-          value: review.content || "",
+          value: normalizeReviewContent(review.content || ""),
           onChange: value => updateReview(index, {
-            content: value
+            content: normalizeReviewContent(value)
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Google Maps Review URL", "ai-zippy-child"),
+          type: "url",
+          value: review.reviewUrl || "",
+          onChange: value => updateReview(index, {
+            reviewUrl: value
+          }),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Used for the Read more link when this review is longer than five lines.", "ai-zippy-child")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
             onSelect: media => updateReview(index, {
@@ -253,7 +284,7 @@ function Edit({
               children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add First Review", "ai-zippy-child")
             })]
           }) : safeReviews.map((review, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("article", {
-            className: "az-child-reviews__card",
+            className: getReviewCardClassName(review),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "az-child-reviews__avatar-wrap",
               children: review.imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
@@ -274,12 +305,17 @@ function Edit({
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "p",
               className: "az-child-reviews__content",
-              value: review.content || "",
+              value: normalizeReviewContent(review.content || ""),
               onChange: value => updateReview(index, {
-                content: value
+                content: normalizeReviewContent(value)
               }),
               placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Review text", "ai-zippy-child")
-            })]
+            }), review.reviewUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              className: "az-child-reviews__read-more",
+              href: review.reviewUrl,
+              onClick: event => event.preventDefault(),
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Read more", "ai-zippy-child")
+            }) : null]
           }, `review-${index}`))
         })]
       })
@@ -337,7 +373,7 @@ function save() {
   \************************************************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ai-zippy-child/patient-reviews","version":"1.0.0","title":"Patient Reviews Grid","category":"ai-zippy","icon":"format-quote","description":"Reviews section with heading and repeatable testimonial cards.","keywords":["reviews","testimonials","patients","quotes"],"supports":{"html":false,"align":["wide","full"],"spacing":{"margin":true,"padding":true}},"attributes":{"sectionLabel":{"type":"string","default":"Reviews"},"title":{"type":"string","default":"Hear what our patients say"},"forceFullWidth":{"type":"boolean","default":true},"reviews":{"type":"array","default":[{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120"},{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120"},{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120"}]}},"textdomain":"ai-zippy-child","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ai-zippy-child/patient-reviews","version":"1.0.0","title":"Patient Reviews Grid","category":"ai-zippy","icon":"format-quote","description":"Reviews section with heading and repeatable testimonial cards.","keywords":["reviews","testimonials","patients","quotes"],"supports":{"html":false,"align":["wide","full"],"spacing":{"margin":true,"padding":true}},"attributes":{"sectionLabel":{"type":"string","default":"Reviews"},"title":{"type":"string","default":"Hear what our patients say"},"forceFullWidth":{"type":"boolean","default":true},"reviews":{"type":"array","default":[{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120","reviewUrl":""},{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120","reviewUrl":""},{"name":"Chelsia Lee","content":"I have been doctor Valli for over 2 years plus and it has always been a pleasant one and i even referred my husband to see this doc instead of his usual doc.","imageId":0,"imageUrl":"https://placehold.co/120x120","reviewUrl":""}]}},"textdomain":"ai-zippy-child","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }
 
@@ -445,8 +481,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"patient-reviews/index": 0,
-/******/ 			"patient-reviews/style-index": 0
+/******/ 			"index": 0,
+/******/ 			"./style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -496,7 +532,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["patient-reviews/style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/patient-reviews/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/patient-reviews/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

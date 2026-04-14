@@ -7,9 +7,17 @@
   border-radius: 6px;
 }
 .wp-block-ai-zippy-child-faq-grid .az-child-faq__title:empty::before,
+.wp-block-ai-zippy-child-faq-grid .az-child-faq__section-title:empty::before,
+.wp-block-ai-zippy-child-faq-grid .az-child-faq__section-description:empty::before,
 .wp-block-ai-zippy-child-faq-grid .az-child-faq__question:empty::before,
 .wp-block-ai-zippy-child-faq-grid .az-child-faq__answer:empty::before {
   opacity: 0.6;
+}
+.az-child-faq__inspector-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
 
 /*# sourceMappingURL=index.css.map*/

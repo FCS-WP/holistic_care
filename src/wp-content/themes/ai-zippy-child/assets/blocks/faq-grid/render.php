@@ -16,6 +16,7 @@ if (!is_array($items)) {
 
 $heading_id = !empty($title) ? wp_unique_id('az-faq-title-') : '';
 $accordion_group = wp_unique_id('az-faq-group-');
+$has_open_faq = false;
 
 $wrapper_config = [
 	'class' => $force_full_width ? 'alignfull az-force-fullwidth' : '',
@@ -40,11 +41,27 @@ $wrapper_attributes = get_block_wrapper_attributes($wrapper_config);
 		<div class="az-child-faq__grid">
 			<?php foreach ($items as $index => $item) : ?>
 				<?php
+				$item_type = ($item['type'] ?? 'faq') === 'title' ? 'title' : 'faq';
+				$item_title = wp_kses_post($item['title'] ?? '');
+				$item_description = wp_kses_post($item['description'] ?? '');
 				$question = wp_kses_post($item['question'] ?? '');
 				$answer = wp_kses_post($item['answer'] ?? '');
 				?>
-				<?php if (!empty($question) || !empty($answer)) : ?>
-					<details class="az-child-faq__item" name="<?php echo esc_attr($accordion_group); ?>"<?php echo 0 === $index ? ' open' : ''; ?>>
+
+				<?php if ('title' === $item_type) : ?>
+					<?php if (!empty($item_title) || !empty($item_description)) : ?>
+						<div class="az-child-faq__section">
+							<?php if (!empty($item_title)) : ?>
+								<h3 class="az-child-faq__section-title"><?php echo $item_title; ?></h3>
+							<?php endif; ?>
+
+							<?php if (!empty($item_description)) : ?>
+								<p class="az-child-faq__section-description"><?php echo $item_description; ?></p>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
+				<?php elseif (!empty($question) || !empty($answer)) : ?>
+					<details class="az-child-faq__item" name="<?php echo esc_attr($accordion_group); ?>"<?php echo !$has_open_faq ? ' open' : ''; ?>>
 						<summary class="az-child-faq__summary">
 							<span class="az-child-faq__question"><?php echo $question; ?></span>
 							<span class="az-child-faq__toggle" aria-hidden="true">
@@ -57,6 +74,7 @@ $wrapper_attributes = get_block_wrapper_attributes($wrapper_config);
 							</div>
 						<?php endif; ?>
 					</details>
+					<?php $has_open_faq = true; ?>
 				<?php endif; ?>
 			<?php endforeach; ?>
 		</div>

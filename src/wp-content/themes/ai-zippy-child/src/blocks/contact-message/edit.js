@@ -45,6 +45,7 @@ export default function Edit({ attributes, setAttributes }) {
 		sectionDescription,
 		contacts,
 		formTitle,
+		recipientEmail,
 		nameLabel,
 		namePlaceholder,
 		phoneLabel,
@@ -119,6 +120,16 @@ export default function Edit({ attributes, setAttributes }) {
 						label={__("Form Title", "ai-zippy-child")}
 						value={formTitle}
 						onChange={(value) => setAttributes({ formTitle: value })}
+					/>
+					<TextControl
+						label={__("Recipient Email", "ai-zippy-child")}
+						type="email"
+						value={recipientEmail}
+						onChange={(value) => setAttributes({ recipientEmail: value })}
+						help={__(
+							"Leave empty to use the WordPress admin email.",
+							"ai-zippy-child",
+						)}
 					/>
 					<TextControl
 						label={__("Name Label", "ai-zippy-child")}

@@ -154,7 +154,7 @@
 }
 .wp-block-ai-zippy-child-patient-reviews .az-child-reviews__avatar-wrap {
   position: absolute;
-  top: 0;
+  top: -5px;
   right: 50%;
   transform: translate(50%, -42%);
   width: 78px;
@@ -189,11 +189,33 @@
 .wp-block-ai-zippy-child-patient-reviews .az-child-reviews__content {
   margin: 0.78rem auto 0;
   color: var(--az-reviews-copy);
+  display: -webkit-box;
   font-size: 0.92rem;
   font-style: italic;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
   line-height: 1.4;
   max-width: 28ch;
+  overflow: hidden;
   text-align: center;
+}
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__read-more {
+  display: none;
+  margin-top: 0.72rem;
+  color: var(--az-reviews-accent);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__read-more:hover,
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__read-more:focus {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wp-block-ai-zippy-child-patient-reviews .az-child-reviews__card--is-overflowing .az-child-reviews__read-more {
+  display: inline-flex;
 }
 @media (max-width: 980px) {
   .wp-block-ai-zippy-child-patient-reviews .az-child-reviews__grid {
