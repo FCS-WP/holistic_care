@@ -12,12 +12,46 @@ function normalizeReviews(reviews) {
 	return Array.isArray(reviews) ? reviews : [];
 }
 
+function normalizeReviewContent(content) {
+	if (!content) {
+		return "";
+	}
+
+	let decodedContent = String(content);
+
+	if (typeof document !== "undefined") {
+		const decoder = document.createElement("textarea");
+		decoder.innerHTML = decodedContent;
+		decodedContent = decoder.value;
+	}
+
+	const withoutBreakTags = decodedContent
+		.replace(/<\s*br\s*\/?>/gi, "\n")
+		.replace(/<\/p>\s*<p[^>]*>/gi, "\n\n")
+		.replace(/<\/?p[^>]*>/gi, "");
+	const withoutTags = withoutBreakTags.replace(/<[^>]*>/g, "");
+
+	return withoutTags.replace(/[ \t\r\n]+/g, " ").trim();
+}
+
+function getReviewCardClassName(review) {
+	const classNames = ["az-child-reviews__card"];
+	const content = normalizeReviewContent(review.content || "");
+
+	if ((review.reviewUrl || "") && content.length > 155) {
+		classNames.push("az-child-reviews__card--is-overflowing");
+	}
+
+	return classNames.join(" ");
+}
+
 function createReview() {
 	return {
 		name: "",
 		content: "",
 		imageId: 0,
 		imageUrl: "",
+		reviewUrl: "",
 	};
 }
 
@@ -83,8 +117,20 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 						<TextareaControl
 							label={__("Content", "ai-zippy-child")}
-							value={review.content || ""}
-							onChange={(value) => updateReview(index, { content: value })}
+							value={normalizeReviewContent(review.content || "")}
+							onChange={(value) =>
+								updateReview(index, { content: normalizeReviewContent(value) })
+							}
+						/>
+						<TextControl
+							label={__("Google Maps Review URL", "ai-zippy-child")}
+							type="url"
+							value={review.reviewUrl || ""}
+							onChange={(value) => updateReview(index, { reviewUrl: value })}
+							help={__(
+								"Used for the Read more link when this review is longer than five lines.",
+								"ai-zippy-child",
+							)}
 						/>
 						<MediaUploadCheck>
 							<MediaUpload
@@ -168,7 +214,7 @@ export default function Edit({ attributes, setAttributes }) {
 						) : (
 							safeReviews.map((review, index) => (
 								<article
-									className="az-child-reviews__card"
+									className={getReviewCardClassName(review)}
 									key={`review-${index}`}
 								>
 									<div className="az-child-reviews__avatar-wrap">
@@ -194,12 +240,23 @@ export default function Edit({ attributes, setAttributes }) {
 									<RichText
 										tagName="p"
 										className="az-child-reviews__content"
-										value={review.content || ""}
+										value={normalizeReviewContent(review.content || "")}
 										onChange={(value) =>
-											updateReview(index, { content: value })
+											updateReview(index, {
+												content: normalizeReviewContent(value),
+											})
 										}
 										placeholder={__("Review text", "ai-zippy-child")}
 									/>
+									{review.reviewUrl ? (
+										<a
+											className="az-child-reviews__read-more"
+											href={review.reviewUrl}
+											onClick={(event) => event.preventDefault()}
+										>
+											{__("Read more", "ai-zippy-child")}
+										</a>
+									) : null}
 								</article>
 							))
 						)}

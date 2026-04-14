@@ -6,8 +6,17 @@
 	}
 
 	.az-child-faq__title:empty::before,
+	.az-child-faq__section-title:empty::before,
+	.az-child-faq__section-description:empty::before,
 	.az-child-faq__question:empty::before,
 	.az-child-faq__answer:empty::before {
 		opacity: 0.6;
 	}
+}
+
+.az-child-faq__inspector-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 12px;
 }

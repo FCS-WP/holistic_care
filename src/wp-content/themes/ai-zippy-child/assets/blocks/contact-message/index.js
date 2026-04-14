@@ -151,6 +151,7 @@ function Edit({
     sectionDescription,
     contacts,
     formTitle,
+    recipientEmail,
     nameLabel,
     namePlaceholder,
     phoneLabel,
@@ -237,6 +238,14 @@ function Edit({
           onChange: value => setAttributes({
             formTitle: value
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Recipient Email", "ai-zippy-child"),
+          type: "email",
+          value: recipientEmail,
+          onChange: value => setAttributes({
+            recipientEmail: value
+          }),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Leave empty to use the WordPress admin email.", "ai-zippy-child")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Name Label", "ai-zippy-child"),
           value: nameLabel,
@@ -472,7 +481,7 @@ function save() {
   \************************************************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ai-zippy-child/contact-message","version":"1.0.0","title":"Contact Message Section","category":"ai-zippy","icon":"email-alt","description":"Two-column contact section with info cards and a message form preview.","keywords":["contact","message","form","clinic"],"supports":{"html":false,"align":["wide","full"],"spacing":{"margin":true,"padding":true}},"attributes":{"sectionTitle":{"type":"string","default":"Contact Us"},"sectionDescription":{"type":"string","default":"We\'re here to help you on your journey to holistic wellness. Reach out to us through any of the channels below."},"contacts":{"type":"array","default":[{"icon":"phone","label":"Main Line","value":"6513 4757"},{"icon":"whatsapp","label":"Whatsapp","value":"8893 4529"},{"icon":"email","label":"Email","value":"clinic@holisticcare.sg"},{"icon":"address","label":"Address","value":"Block 455, Sengkang West Avenue"}]},"formTitle":{"type":"string","default":"Leave A Message"},"nameLabel":{"type":"string","default":"Your Name"},"namePlaceholder":{"type":"string","default":"John Doe"},"phoneLabel":{"type":"string","default":"Your Phone"},"phonePlaceholder":{"type":"string","default":"+65 0000 0000"},"emailLabel":{"type":"string","default":"Your Email"},"emailPlaceholder":{"type":"string","default":"john@example.com"},"subjectLabel":{"type":"string","default":"Subject"},"subjectPlaceholder":{"type":"string","default":"General Enquiry"},"messageLabel":{"type":"string","default":"Message"},"messagePlaceholder":{"type":"string","default":"How can we help you today?"},"buttonText":{"type":"string","default":"Send Message"},"forceFullWidth":{"type":"boolean","default":true}},"textdomain":"ai-zippy-child","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ai-zippy-child/contact-message","version":"1.0.0","title":"Contact Message Section","category":"ai-zippy","icon":"email-alt","description":"Two-column contact section with info cards and a message form preview.","keywords":["contact","message","form","clinic"],"supports":{"html":false,"align":["wide","full"],"spacing":{"margin":true,"padding":true}},"attributes":{"sectionTitle":{"type":"string","default":"Contact Us"},"sectionDescription":{"type":"string","default":"We\'re here to help you on your journey to holistic wellness. Reach out to us through any of the channels below."},"contacts":{"type":"array","default":[{"icon":"phone","label":"Main Line","value":"6513 4757"},{"icon":"whatsapp","label":"Whatsapp","value":"8893 4529"},{"icon":"email","label":"Email","value":"clinic@holisticcare.sg"},{"icon":"address","label":"Address","value":"Block 455, Sengkang West Avenue"}]},"formTitle":{"type":"string","default":"Leave A Message"},"recipientEmail":{"type":"string","default":""},"nameLabel":{"type":"string","default":"Your Name"},"namePlaceholder":{"type":"string","default":"John Doe"},"phoneLabel":{"type":"string","default":"Your Phone"},"phonePlaceholder":{"type":"string","default":"+65 0000 0000"},"emailLabel":{"type":"string","default":"Your Email"},"emailPlaceholder":{"type":"string","default":"john@example.com"},"subjectLabel":{"type":"string","default":"Subject"},"subjectPlaceholder":{"type":"string","default":"General Enquiry"},"messageLabel":{"type":"string","default":"Message"},"messagePlaceholder":{"type":"string","default":"How can we help you today?"},"buttonText":{"type":"string","default":"Send Message"},"forceFullWidth":{"type":"boolean","default":true}},"textdomain":"ai-zippy-child","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -580,8 +589,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"contact-message/index": 0,
-/******/ 			"contact-message/style-index": 0
+/******/ 			"index": 0,
+/******/ 			"./style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -631,7 +640,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["contact-message/style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/contact-message/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/wp-content/themes/ai-zippy-child/src/blocks/contact-message/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

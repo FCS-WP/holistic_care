@@ -27,9 +27,20 @@ class Zippy_Optimise
 
 		add_action('wp_enqueue_scripts', [$this, 'remove_block_css'], 100);
 
+		add_action('after_setup_theme', [$this, 'maybe_remove_global_styles'], 20);
+	}
 
-		remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
-		remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+	public function maybe_remove_global_styles()
+	{
+		if (! $this->should_keep_block_theme_styles()) {
+			remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+			remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+		}
+	}
+
+	private function should_keep_block_theme_styles()
+	{
+		return function_exists('wp_is_block_theme') && wp_is_block_theme();
 	}
 
 
@@ -64,6 +75,10 @@ class Zippy_Optimise
 
 	public function remove_block_css()
 	{
+		if ($this->should_keep_block_theme_styles()) {
+			return;
+		}
+
 		wp_dequeue_style('wp-block-library'); // Wordpress core
 		wp_dequeue_style('wp-block-library-theme'); // Wordpress core
 		wp_dequeue_style('wc-block-style'); // WooCommerce

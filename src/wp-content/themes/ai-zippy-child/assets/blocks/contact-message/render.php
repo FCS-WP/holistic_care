@@ -10,6 +10,7 @@ $section_title       = wp_kses_post($attributes['sectionTitle'] ?? '');
 $section_description = wp_kses_post($attributes['sectionDescription'] ?? '');
 $contacts            = $attributes['contacts'] ?? [];
 $form_title          = wp_kses_post($attributes['formTitle'] ?? '');
+$recipient_email     = sanitize_email($attributes['recipientEmail'] ?? '');
 $name_label          = esc_html($attributes['nameLabel'] ?? '');
 $name_placeholder    = esc_attr($attributes['namePlaceholder'] ?? '');
 $phone_label         = esc_html($attributes['phoneLabel'] ?? '');
@@ -68,6 +69,7 @@ $email_id = wp_unique_id('az-contact-email-');
 $subject_id = wp_unique_id('az-contact-subject-');
 $message_id = wp_unique_id('az-contact-message-');
 $honeypot_id = wp_unique_id('az-contact-website-');
+$recipient_signature = !empty($recipient_email) ? hash_hmac('sha256', $recipient_email, wp_salt('auth')) : '';
 ?>
 
 <section <?php echo $wrapper_attributes; ?>>
@@ -147,6 +149,10 @@ $honeypot_id = wp_unique_id('az-contact-website-');
 					</div>
 
 					<input id="<?php echo esc_attr($honeypot_id); ?>" name="website" type="text" tabindex="-1" autocomplete="off" hidden aria-hidden="true" />
+					<?php if (!empty($recipient_email) && is_email($recipient_email)) : ?>
+						<input name="_recipient_email" type="hidden" value="<?php echo esc_attr($recipient_email); ?>" />
+						<input name="_recipient_signature" type="hidden" value="<?php echo esc_attr($recipient_signature); ?>" />
+					<?php endif; ?>
 				</div>
 
 				<button type="submit" class="az-child-contact__submit"><?php echo $button_text; ?></button>

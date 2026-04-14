@@ -19,6 +19,24 @@ function shouldUseSlider($slider) {
 	return reviewCount > 1 && (mobileQuery.matches || reviewCount > 3);
 }
 
+function updateReviewOverflowStates($slider) {
+	$slider.find(".az-child-reviews__card").each((_, card) => {
+		const $card = $(card);
+		const content = $card.find(".az-child-reviews__content").get(0);
+		const hasReadMore = $card.find(".az-child-reviews__read-more[href]").length > 0;
+
+		if (!content || !hasReadMore) {
+			$card.removeClass("az-child-reviews__card--is-overflowing");
+			return;
+		}
+
+		$card.toggleClass(
+			"az-child-reviews__card--is-overflowing",
+			content.scrollHeight - content.clientHeight > 1,
+		);
+	});
+}
+
 function syncCardMinHeight($slider) {
 	let $cards = $slider.find(
 		".slick-slide:not(.slick-cloned) .az-child-reviews__card",
@@ -49,11 +67,16 @@ function syncCardMinHeight($slider) {
 	}
 }
 
+function syncReviewCards($slider) {
+	updateReviewOverflowStates($slider);
+	syncCardMinHeight($slider);
+}
+
 function initSlider($slider) {
 	const reviewCount = getReviewCount($slider);
 
 	$slider.on("init setPosition afterChange", () => {
-		syncCardMinHeight($slider);
+		syncReviewCards($slider);
 	});
 
 	$slider.slick({
@@ -82,8 +105,8 @@ function initSlider($slider) {
 		],
 	});
 
-	setTimeout(() => syncCardMinHeight($slider), 80);
-	setTimeout(() => syncCardMinHeight($slider), 300);
+	setTimeout(() => syncReviewCards($slider), 80);
+	setTimeout(() => syncReviewCards($slider), 300);
 }
 
 function updateReviewSliders() {
@@ -96,6 +119,7 @@ function updateReviewSliders() {
 				$slider.slick("unslick");
 			}
 
+			updateReviewOverflowStates($slider);
 			$slider.find(".az-child-reviews__card").css("min-height", "");
 			return;
 		}
@@ -105,7 +129,7 @@ function updateReviewSliders() {
 			return;
 		}
 
-		syncCardMinHeight($slider);
+		syncReviewCards($slider);
 	});
 }
 
